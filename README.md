@@ -49,7 +49,14 @@ Otros addons pueden crear nuevas recompensas utilizando el comando `/scriptevent
 - **Correcta Implementación:** Para que el reward sea agregado correctamente sin importar si el **DS** addon esta agregado al mundo o no, debes asegurarte de ejecutar constantemente este comando, asi nos aseguramos que cuando **DS** sea agregado entonces tu reward sea agregado correctamente. Luego no tendras que preocuparte por nada mas.
 
 ### <a name="save_loot_folder"></a>Guardar el Archivo de Loot Table
-Para definir el loot de la recompensa, debes crear un archivo de loot_table correspondiente al reward_id y colocarlo en la ruta DS/rewards/ dentro del directorio del addon. Por ejemplo, si tu reward_id es ds.ovout_studios.master_explorer, deberás crear un archivo master_explorer.json en la ruta DS/rewards/.
+Para definir el loot de la recompensa, debes crear un archivo de loot_table correspondiente al reward_id y colocarlo en la ruta `DS/rewards/` dentro del directorio loot_tables de tu addon. Por ejemplo, si tu reward_id es `ds_r.ovout_studios.master_explorer`, deberás crear un archivo loot table `ds_r.ovout_studios.master_explorer.json` en la ruta `loot_tables/DS/rewards/`. Ejemplo:
+
+```
+loot_tables/
+└── DS/
+    └── rewards/
+        └── ds_r.ovout_studios.master_explorer.json 
+```
 
 ### Ejemplo de Uso
 
