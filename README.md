@@ -10,10 +10,10 @@ Gracias por su interes en integrar nuestro addon con el suyo.❤️
 
 - **Contador de Días Sobrevividos:** Mantiene un registro de los días que cada jugador ha sobrevivido.
 - **Recompensas Personalizables:** Los jugadores pueden recibir recompensas después de sobrevivir un número específico de días.
-- **Integración con Otros Addons:** Otros addons pueden agregar nuevas recompensas utilizando comandos.
+- **Integración con Otros Addons:** Otros addons pueden agregar nuevas recompensas o crear muchas otras cosas creativas como crear eventos usando algunas estadísticas disponibles.
 
 ## Estadísticas Disponibles
-**DS** utiliza scoreboards para llevar un registro de varias estadísticas importantes, que pueden ser consultadas y utilizadas por los desarrolladores / creadores para crear contenido adicional y creativo. Las estadísticas disponibles son:
+**DS** utiliza scoreboards para llevar un registro de varias estadísticas importantes, que pueden ser consultadas y utilizadas por los desarrolladores / creadores para crear contenido adicional y creativo:
 #### Estadísticas individuales (corresponde a cada jugador):
 - **Días Sobrevividos Actuales:** `ds.current_counter` El número de días que un jugador ha sobrevivido actualmente.
 - **Máximos Días Sobrevividos:** `ds.max_counter` El mayor número de días que un jugador ha sobrevivido en una sola vida.
@@ -39,19 +39,23 @@ Otros addons pueden crear nuevas recompensas utilizando el comando `/scriptevent
 - `"<reward_description>"`: La descripción de la recompensa. Debe estar entre comillas dobles. Ejemplo: `"Iron tools and equipment"`.
 - `<reward_day>`: El día específico en el que se otorga la recompensa. Debe ser un número entero. Ejemplo: `3`.
 - `<reward_repeat_day>`: El intervalo en días para repetir la recompensa. Si no se repite, debe ser `0`. Ejemplo: `7`.
-- `"<reward_id>"`: El identificador único de la recompensa. Debe estar entre comillas dobles y seguir el formato `ds.<studio_namespace>.<unique_id>`. Ejemplo: `"ds.ovout_studios.reward_1"`.
+- `"<reward_id>"`: El identificador único de la recompensa. Debe estar entre comillas dobles y seguir el formato `ds_r.<studio_namespace>.<unique_id>`. Ejemplo: `"ds_r.ovout_studios.cool_reward_21"`. Este campo también corresponde al nombre de la loot_table que debes utilizar para definir el loot de la recompensa. [Como guardar el archivo loot](#save_loot_folder)
 - `"<studio_name>"`: El nombre del estudio o creador de la recompensa. Debe estar entre comillas dobles. Ejemplo: `"Ovout Studios"`.
 
 ### Consideraciones Importantes
 
 - **ID de la Recompensa:** El `reward_id` debe ser único para cada recompensa. Esto asegura que no haya conflictos entre diferentes recompensas.
-- **Formato Correcto:** Asegúrese de que todos los campos estén en el formato correcto, especialmente el `reward_id`, que debe seguir el patrón `ds.<studio_namespace>.<unique_id>`.
+- **Formato Correcto:** Asegúrese de que todos los campos estén en el formato correcto, especialmente el `reward_id`, que debe seguir el patrón `ds_r.<studio_namespace>.<unique_id>`.
+- **Correcta Implementación:** Para que el reward sea agregado correctamente sin importar si el **DS** addon esta agregado al mundo o no, debes asegurarte de ejecutar constantemente este comando, asi nos aseguramos que cuando **DS** sea agregado entonces tu reward sea agregado correctamente. Luego no tendras que preocuparte por nada mas.
+
+### <a name="save_loot_folder"></a>Guardar el Archivo de Loot Table
+Para definir el loot de la recompensa, debes crear un archivo de loot_table correspondiente al reward_id y colocarlo en la ruta DS/rewards/ dentro del directorio del addon. Por ejemplo, si tu reward_id es ds.ovout_studios.master_explorer, deberás crear un archivo master_explorer.json en la ruta DS/rewards/.
 
 ### Ejemplo de Uso
 
 Supongamos que desea agregar una nueva recompensa llamada "Master Explorer" con la descripción "Diamond tools and armor", que se otorga en el día 15 y se repite cada 30 días. Su comando sería:
 
-`/scriptevent ds:add_reward "Master Explorer","Diamond tools and armor",15,30,"ds.ovout_studios.master_explorer","Ovout Studios"`
+`/scriptevent ds:add_reward "Master Explorer","Diamond tools and armor",15,30,"ds_r.ovout_studios.master_explorer","Ovout Studios"`
 
 ## Implementación de Recompensas
 
