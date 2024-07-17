@@ -39,7 +39,7 @@ Otros addons pueden crear nuevas recompensas utilizando el comando `/scriptevent
 - `"<reward_description>"`: La descripción de la recompensa. Debe estar entre comillas dobles. Ejemplo: `"Iron tools and equipment"`.
 - `<reward_day>`: El día específico en el que se otorga la recompensa. Debe ser un número entero. Ejemplo: `3`.
 - `<reward_repeat_day>`: El intervalo en días para repetir la recompensa. Si no se repite, debe ser `0`. Ejemplo: `7`.
-- `"<reward_id>"`: El identificador único de la recompensa. Debe estar entre comillas dobles y seguir el formato `ds_r.<studio_namespace>.<unique_id>`. Ejemplo: `"ds_r.ovout_studios.cool_reward_21"`. Este campo también corresponde al nombre de la loot_table que debes utilizar para definir el loot de la recompensa. [Como guardar el archivo loot](#save_loot_folder)
+- `"<reward_id>"`: El identificador único de la recompensa. Debe estar entre comillas dobles y seguir el formato `ds_r.<studio_namespace>.<unique_id>`. Ejemplo: `"ds_r.ovout_studios.cool_reward_21"`. Este campo también corresponde al nombre de la loot_table que debes utilizar para definir el loot de la recompensa. [Guardar el Archivo de Loot Table](#save_loot_folder)
 - `"<studio_name>"`: El nombre del estudio o creador de la recompensa. Debe estar entre comillas dobles. Ejemplo: `"Ovout Studios"`.
 
 ### Consideraciones Importantes
