@@ -1,0 +1,2 @@
+say TESTING DAYS SURVIVED COUNTER ADDON
+scriptevent ds:test

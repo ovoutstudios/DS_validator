@@ -1,0 +1,36 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "pack.name",
+		"description": "pack.description",
+		"uuid": "be692da1-7bc8-4ee9-b56d-61994533bb06",
+		"version": [ 1, 0, 0 ],
+        "min_engine_version": [ 1, 21, 0 ]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "87872a41-07f9-44c1-870f-e6fc82fdfefd",
+            "version": [1, 0, 0]
+		},
+		{
+			"type": "script",
+			"uuid": "e3af4b85-0be7-4167-80fa-496c275dcc6d",
+            "version": [1, 0, 0],
+			"language": "javascript",
+			"entry": "scripts/main.js"
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.10.0"
+		}
+	],
+	"metadata": {
+		"authors": [
+			"Syclone Studios",
+			"Ovout Studios"
+		]
+	}
+}
