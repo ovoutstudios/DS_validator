@@ -3,7 +3,7 @@ import * as server from "@minecraft/server";
 const world = server.world;
 const system = server.system;
 
-// Lista de scoreboards que se deben validar
+// List of scoreboards to be validated
 const scoreboardsToValidate = [
   "ds.current_counter",
   "ds.max_counter",
@@ -11,7 +11,7 @@ const scoreboardsToValidate = [
   "ds.dead_counter"
 ];
 
-// Función para validar scoreboards
+// Function to validate scoreboards
 function validateScoreboards() {
   const missingScoreboards = [];
   const presentScoreboards = [];
@@ -44,7 +44,7 @@ function validateScoreboards() {
   return resultMessage.trim(); // Eliminar espacios innecesarios
 }
 
-// Función para validar y agregar un reward
+// Function to validate and add a reward
 function validateAndAddReward(message) {
   const reward_values = message.trim();
   // Utilizamos una expresión regular para dividir la cadena en partes
@@ -56,13 +56,13 @@ function validateAndAddReward(message) {
   } else {
     const [nombre, descripcion, dia, repeat_day, id, studio_name] = args;
 
-    // Validar si dia y repeat_day son números enteros positivos y no decimales
+    // Validate if day and repeat_day are positive integers and not decimals
     const diaNumero = Number(dia);
     const repeatDayNumero = Number(repeat_day);
     const diaEsEntero = dia.includes('.') === false && !isNaN(diaNumero) && Number.isInteger(diaNumero);
     const repeatDayEsEntero = repeat_day.includes('.') === false && !isNaN(repeatDayNumero) && Number.isInteger(repeatDayNumero);
 
-    // Validar que nombre, descripcion, id y studio_name estén entre comillas y que dia y repeat_day no estén entre comillas
+    // Validate that name, description, id and studio_name are in quotes and that day and repeat_day are not in quotes.
     const nombreValido = nombre.startsWith('"') && nombre.endsWith('"');
     const descripcionValido = descripcion.startsWith('"') && descripcion.endsWith('"');
     const diaValido = !isNaN(dia) && !dia.startsWith('"') && !dia.endsWith('"');
@@ -70,7 +70,7 @@ function validateAndAddReward(message) {
     const idValido = id.startsWith('"') && id.endsWith('"');
     const studioNameValido = studio_name.startsWith('"') && studio_name.endsWith('"');
 
-    // Validar el formato de reward_id
+    // Validate reward_id format
     const idPattern = /^"ds_r\.[^".]+\.[^".]+"$/;
     const idFormatValido = idPattern.test(id);
 
@@ -81,13 +81,13 @@ function validateAndAddReward(message) {
     } else if (!idFormatValido) {
       return '§8[DS_console]: §cFailed format§r <reward_id> must be in the format "ds_r.<studio_name>.<reward_id>"';
     } else {
-      // Quitar las comillas de nombre, descripcion, id y studio_name
+      // Remove quotation marks from name, description, id and studio_name
       const cleanNombre = nombre.slice(1, -1);
       const cleanDescripcion = descripcion.slice(1, -1);
       const cleanId = id.slice(1, -1);
       const cleanStudioName = studio_name.slice(1, -1);
 
-      // Agregar el reward al dynamic property
+      // Add reward to dynamic property
       const newReward = {
         reward_name: cleanNombre,
         reward_description: cleanDescripcion,
@@ -102,12 +102,12 @@ function validateAndAddReward(message) {
   }
 }
 
-// Función principal de validación de scoreboards
+// Main scoreboard validation function
 function runValidation() {
   return validateScoreboards();
 }
 
-// Suscripción al evento personalizado 'ds:test' y 'ds:add_reward'
+// Subscribe to the custom event 'ds:test' and 'ds:add_reward'.
 system.afterEvents.scriptEventReceive.subscribe((data) => {
   const { id, sourceEntity, message } = data;
 
