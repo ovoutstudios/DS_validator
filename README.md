@@ -50,7 +50,7 @@ Other addons can create new rewards using the `/scriptevent ds:add_reward` comma
 - `“<reward_description>”`: The description of the reward. Must be enclosed in double quotes. Example: `“Iron tools and equipment”`.
 - `<reward_day>`: The specific day on which the reward is awarded. Must be an integer. Example: `3`.
 - `<reward_repeat_day>`: The interval in days to repeat the reward. If not repeated, it must be `0`. Example: `7`.
-- `“<reward_id>”`: The unique identifier of the reward. It must be enclosed in double quotes and follow the format `ds_r.<studio_namespace>.<unique_id>`. Example: `“ds_r.ovout_studios.cool_reward_21”`. This field also corresponds to the name of the loot_table you should use to define the reward loot. [Save Loot Table File](#save_loot_table_file).
+- `“<reward_id>”`: The unique identifier of the reward. It must be enclosed in double quotes and follow the format `ds_r.<studio_namespace>.<unique_id>`. Example: `“ds_r.ovout_studios.cool_reward_21”`. This field also corresponds to the name of the loot_table you should use to define the reward loot. [Save Loot Table File](#save-loot-table-file).
 - `“<studio_name>”`: The name of the studio or creator of the reward. Must be enclosed in double quotes. Example: `“Ovout Studios”`.
 
 ### Important Considerations
