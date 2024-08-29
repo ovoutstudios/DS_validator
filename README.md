@@ -50,7 +50,7 @@ Other addons can create new rewards using the `/scriptevent ds:add_reward` comma
 - `“<reward_description>”`: The description of the reward. Must be enclosed in double quotes. Example: `“Iron tools and equipment”`.
 - `<reward_day>`: The specific day on which the reward is awarded. Must be an integer. Example: `3`.
 - `<reward_repeat_day>`: The interval in days to repeat the reward. If not repeated, it must be `0`. Example: `7`.
-- `“<reward_id>”`: The unique identifier of the reward. It must be enclosed in double quotes and follow the format `ds_r.<studio_namespace>.<unique_id>`. Example: `“ds_r.ovout_studios.cool_reward_21”`. This field also corresponds to the name of the loot_table you should use to define the reward loot. [Save Loot Table File](#save_loot_folder).
+- `“<reward_id>”`: The unique identifier of the reward. It must be enclosed in double quotes and follow the format `ds_r.<studio_namespace>.<unique_id>`. Example: `“ds_r.ovout_studios.cool_reward_21”`. This field also corresponds to the name of the loot_table you should use to define the reward loot. [Save Loot Table File](#save_loot_table_file).
 - `“<studio_name>”`: The name of the studio or creator of the reward. Must be enclosed in double quotes. Example: `“Ovout Studios”`.
 
 ### Important Considerations
@@ -59,7 +59,7 @@ Other addons can create new rewards using the `/scriptevent ds:add_reward` comma
 - **Correct Format:** Make sure that all fields are in the correct format, especially the `reward_id`, which must follow the pattern `ds_r.<studio_namespace>.<unique_id>`.
 - **Correct Implementation:** In order for the reward to be added correctly regardless of whether the **DS** addon is added to the world or not, you must make sure to constantly run this command, so we make sure that when **DS** is added then your reward is added correctly. Then you won't have to worry about anything else.
 
-### <a name=“save_loot_folder”></a>Save Loot Table File
+### Save Loot Table File
 To define the loot of the reward, you must create a loot_table file corresponding to the reward_id and place it in the `DS/rewards/` path inside the loot_tables directory of your addon. For example, if your reward_id is `ds_r.ovout_studios.master_explorer`, you must create a loot table file `ds_r.ovout_studios.master_explorer.json` in the `loot_tables/DS/rewards/` path. 
 
 Example:
