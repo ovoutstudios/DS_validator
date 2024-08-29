@@ -3,19 +3,19 @@
 	"header": {
 		"name": "pack.name",
 		"description": "pack.description",
-		"uuid": "be692da1-7bc8-4ee9-b56d-61994533bb06",
+		"uuid": "fcf468d7-f2b4-4d61-8dd8-11a7849b342b",
 		"version": [ 1, 0, 0 ],
         "min_engine_version": [ 1, 21, 0 ]
 	},
 	"modules": [
 		{
 			"type": "data",
-			"uuid": "87872a41-07f9-44c1-870f-e6fc82fdfefd",
+			"uuid": "35cc2a67-f282-4ef6-8d55-500f701a3545",
             "version": [1, 0, 0]
 		},
 		{
 			"type": "script",
-			"uuid": "e3af4b85-0be7-4167-80fa-496c275dcc6d",
+			"uuid": "425d8df5-664c-495e-959a-a26126eeaff4",
             "version": [1, 0, 0],
 			"language": "javascript",
 			"entry": "scripts/main.js"
